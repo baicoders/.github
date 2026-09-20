@@ -1,0 +1,51 @@
+name: Task / chore
+description: Internal work item — refactor, upgrade, docs, infra, follow-up
+title: "[Task]: "
+labels: ["task"]
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: One or two sentences on what needs doing and why now.
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: In scope
+      value: |
+        - [ ]
+        - [ ]
+    validations:
+      required: true
+
+  - type: textarea
+    id: out_of_scope
+    attributes:
+      label: Out of scope
+      description: Explicitly list what this task will not touch, so it does not sprawl.
+    validations:
+      required: false
+
+  - type: textarea
+    id: done
+    attributes:
+      label: Definition of done
+      description: The checks that must be true before this can be closed.
+      value: |
+        - [ ] Change merged to `main`
+        - [ ] Tests updated or added
+        - [ ] Docs / README updated if behaviour changed
+    validations:
+      required: true
+
+  - type: input
+    id: blocked_by
+    attributes:
+      label: Blocked by
+      description: Issue or PR numbers this depends on. Leave blank if none.
+      placeholder: "#42, #57"
+    validations:
+      required: false
