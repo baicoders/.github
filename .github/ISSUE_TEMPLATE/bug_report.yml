@@ -1,0 +1,98 @@
+name: Bug report
+description: Something is broken or behaving incorrectly
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. Please fill in what you can — a clear reproduction
+        is the single most useful thing you can give us.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: A clear description of the bug.
+      placeholder: Saving a purchase order silently fails when the supplier field is blank.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Numbered steps someone else can follow from a clean state.
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behaviour
+      description: Include exact error text or a stack trace if you have one.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - S1 — production down / data loss
+        - S2 — major feature unusable, no workaround
+        - S3 — feature impaired, workaround exists
+        - S4 — cosmetic or minor
+      default: 2
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Version / commit
+      description: Release tag, build number, or commit SHA where you saw this.
+      placeholder: v1.4.2 or 8f3c1ab
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, runtime, browser, database — whatever is relevant.
+      value: |
+        - OS:
+        - Runtime / browser:
+        - Deployment (local / staging / production):
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs, screenshots or recordings
+      description: Paste logs in a code block. Redact secrets, tokens and customer data first.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched existing issues and this is not a duplicate.
+          required: true
+        - label: I removed all credentials, tokens and personal data from the details above.
+          required: true
